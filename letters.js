@@ -1,20 +1,35 @@
-/* var list = require("./word");
 
-var input = process.argv;
 
-var guess = input[2];
-var word = "baracuda";
-var guessList = list;
-
-function Letter(guess,word,boo,guessList){
+function Letter(guess,word,guessList,bool){
     this.guess = guess;
     this.word = word;
-    this.boo = boo;
     this.guessList = guessList;
+    this.bool = bool;
+}
+
+Letter.prototype.guessedYet = function(guess,guessList){
+    if(guessList.includes(guess)){
+        return true;
+    }else{
+        return false;
+    };
+};
+
+
+Letter.prototype.inWord = function(guess,correct,guessList){
+    
+    if(this.guessedYet(correct,guessList)){
+        this.bool = true;
+        return " " + correct;
+    }else if(guess===correct){
+        this.bool = true;
+        return " " + correct;
+    }else{
+        this.bool = false;
+        return " _";
+    }
 }
 
 
-var letter = new Letter(guess,word,null,guessList);
+module.exports = Letter;
 
-module.exports = letter;
- */
