@@ -57,7 +57,6 @@ function Word(guess,guessList,wordIndex){
     this.finished = false;
 };
 
-
 Word.prototype.print = function(){
     var pops = 0;
     if(letter.guessedYet(letterGuess,letterGuessList)){

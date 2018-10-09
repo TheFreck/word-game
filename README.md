@@ -1,5 +1,8 @@
 # word-game
 ### using Node.js
+
+A blank guess will exit the program
+
 This application uses a javaScript page called Letters to determine whether a letter has been guessed or if it is correct or not
 
 A second page called Word holds the list of words and a guess for each one
