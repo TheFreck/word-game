@@ -6,12 +6,12 @@ var inquirer = require("inquirer");
 var guessList = "";
 var index = Math.random();
 var guess = "11";
+var theWord = new Word(null,guessList,index);
+console.log("description: ",theWord.letterWordDescription);
+theWord.print();
 
 function play(){
-    var theWord = new Word(null,guessList,index);
     if(guess>=0){
-        console.log("description: ",theWord.letterWordDescription);
-        theWord.print();
         inquirer.prompt([{
             type: "input",
             name: "input",
