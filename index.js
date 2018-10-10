@@ -11,6 +11,7 @@ console.log("description: ",theWord.letterWordDescription);
 theWord.print();
 
 function play(){
+    console.log("Hint: ",theWord.letterWordDescription);
     if(guess>=0){
         inquirer.prompt([{
             type: "input",
@@ -19,13 +20,21 @@ function play(){
         }]).then(function(input){
             var input = input.input;
             console.log(input);
+            console.log("target: ",theWord.letterWordName);
+            if(theWord.letterWordName.includes(input)){
+                console.log("it's in there");
+            }else{
+                console.log("it's not");
+                guess --;
+            }
             if(input.length>1){
                 console.log("whoa! one letter at a time");
                 play();
             }else if(input.length===0){
                 console.log("done");
             }else{
-                guess --;
+                
+                console.log("guesses left: ",guess);
                 var word = new Word(input,guessList,index);
                 word.print();
                 guessList += input;

@@ -54,8 +54,7 @@ function Word(guess,guessList,wordIndex){
     letterWordDescription = letterWord.description;
     this.letterWordDescription = letterWordDescription;
     letterGuessList = this.guessList;
-    this.finished = false;
-};
+    this.finished = false;};
 
 Word.prototype.print = function(){
     var pops = 0;
