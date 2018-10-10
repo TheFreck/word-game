@@ -54,24 +54,28 @@ function Word(guess,guessList,wordIndex){
     letterWordDescription = letterWord.description;
     this.letterWordDescription = letterWordDescription;
     letterGuessList = this.guessList;
-    this.finished = false;};
+    this.finished = false;
+};
 
 Word.prototype.print = function(){
     var pops = 0;
     if(letter.guessedYet(letterGuess,letterGuessList)){
-        console.log("you've already guessed that one");
-    }else{
-        var printWord = "";
-        for(i=0; i<letterWordName.length; i++){
-            printWord += " " + letter.inWord(letterGuess,letterWordName[i],letterGuessList);
-            if(letter.bool){pops ++};
-        }
-        console.log("correct letters: ",pops);
-        console.log(printWord);
-        if(pops===letterWordName.length){
-            this.finished = true;
-        }
+        console.log("\n====================\nyou've already guessed that one\n*-*-*-*-*-*-*-*-*-*-*-*-*-*\n");
+
     }
+    var printWord = "";
+    for(i=0; i<letterWordName.length; i++){
+        printWord += " " + letter.inWord(letterGuess,letterWordName[i],letterGuessList);
+        if(letter.bool){pops ++};
+    }
+    console.log("correct letters: ",pops);
+    console.log("\n***********************************************************************\n")
+    console.log(printWord);
+    console.log("\n***********************************************************************\n")
+    if(pops===letterWordName.length){
+        this.finished = true;
+    }
+    
 }
 
 var letter = new Letters(letterGuess,letterWordName,letterGuessList);
