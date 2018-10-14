@@ -34,7 +34,7 @@ var wordList = [{
     description: "can be 'checked off' a second time"
 },{
     name: "discombobulate",
-    description: "befuddled"
+    description: "befuddle"
 },{
     name: "ridiculous",
     description: "they're all gonna laugh at you!!!"
@@ -88,7 +88,7 @@ Word.prototype.print = function(){
 }
 
 
-// the end of the game as we know it
+// it's the end of the game as we know it and I feel fine
 Word.prototype.ending = function(bool,word){
     if(bool){
         console.log("\n**************************\n\nCongratulations!!! You\'re the winner!!!\n\n********************************\n********************")

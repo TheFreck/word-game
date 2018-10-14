@@ -56,7 +56,7 @@ function play(){
             break
     }
     function head(){
-        console.log("\n   #########\n  #         #\n  @  0   0  @\n  |    5    |\n  |  #####  /\n   |  ---  /\n    ^^^^^^^");
+        console.log("\n   #########\n  #         #\n  @  0   0  @\n  |    5    |\n  |  #####  /\n   |  UUU  /\n    |__:__/");
     }
     function body(){
         console.log("    =======\n    |     |\n    |     |\n    |     |\n    |     |\n    |_____|")
