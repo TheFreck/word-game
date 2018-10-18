@@ -12,67 +12,48 @@ var guess = "6";
 // calling the functionality of the other pages without the game data yet
 var theWord = new Word(null,guessList,index);
 // printing the description of the hidden word
-console.log("description: ",theWord.letterWordDescription);
-// printing the spaces instead of the letters
-theWord.print();
 
 // *************************************************************************************************************************************************
 // And now we play
 // *************************************************************************************************************************************************
 
 function play(){
+    console.log('\033[2J');
+    // printing the spaces instead of the letters
+    theWord.print();
     console.log("\n\n\n*************************************\n++++++++++++++++++++++++++++++++++++++\n*************************************")
     // This is a game of hangman
     // The switch determines the body parts to display depending on how many guesses are left
     // The body part functions are defined below
     switch(guess){
         case 6:
-            blank();
+            theWord.blank();
             break
         case 5:
-            head();
+            theWord.head();
             break
         case 4:
-            head();
-            body();
+            theWord.head();
+            theWord.body();
             break
         case 3:
-            head();
-            leftArm();
+            theWord.head();
+            theWord.leftArm();
             break
         case 2:
-            head();
-            leftRightArm();
+            theWord.head();
+            theWord.leftRightArm();
             break
         case 1:
-            head();
-            leftRightArm();
-            leftLeg();
-            break
+            theWord.head();
+            theWord.leftRightArm();
+            theWord.leftLeg();
         case 0:
-            head();
-            leftRightArm();
-            leftRightLeg();
-            break
+            theWord.head();
+            theWord.leftRightArm();
+            theWord.leftRightLeg();
     }
-    function head(){
-        console.log("\n   #########\n  #         #\n  @  0   0  @\n  |    5    |\n  |  #####  /\n   |  UUU  /\n    |__:__/");
-    }
-    function body(){
-        console.log("    =======\n    |     |\n    |     |\n    |     |\n    |     |\n    |_____|")
-    }
-    function leftArm(){
-        console.log("(8) =======\n(8) |     |\n(8) |     |\n(8) |     |\n    |     |\n    |_____|\n")
-    }
-    function leftRightArm(){
-        console.log("(8) ======= (8)\n(8) |     | (8)\n(8) |     | (8)\n(8) |     | (8)\n    |     |\n    |_____|\n")
-    }
-    function leftLeg(){
-        console.log("{88}\n{88}\n{88}\n{88}\n{88}\n{88}\n{88}\n")
-    }
-    function leftRightLeg(){
-        console.log("{88}       {88}\n{88}       {88}\n{88}       {88}\n{88}       {88}\n{88}       {88}\n{88}       {88}\n{88}       {88}\n")
-    }
+    
 
     // *********************************************************************************************************************************************
     // give 'em a hint so they're not wandering in the dark
